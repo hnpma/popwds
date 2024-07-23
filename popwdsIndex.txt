@@ -28,7 +28,8 @@
                 quaerat veritatis doloremque temporibus sed explicabo! 
         </div>
     </div>
-     <div class="active" id="overlay"></div>
+     <!-- <div class="active" id="overlay"></div>-->
+     <div id="overlay"></div>
 </body>
 </html>
 

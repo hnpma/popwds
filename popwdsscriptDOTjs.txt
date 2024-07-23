@@ -1,0 +1,69 @@
+
+popwdsscriptDOTjs.txt
+C:\Users\User\Documents\popwds
+12:10 PM 7/23/2024
+
+const openModalButtons = document.querySelectorAll('[data-modal-target]')
+const closeModalButtons = document.querySelectorAll('[data-modal-close-button]')
+// The above line points to the attribute we used in the HTML File
+// for the button with class="close-button" line 24
+const overlay = document.getElementById('overlay')
+
+openModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = document.querySelector(button.dataset.modalTarget)
+ // The above line is going to get the line from HTML with the code
+ // <button data-modal-target="#modal">Open Modal</button> line (15)
+ //in index.HTML file
+ //which points to the modal having the text of Lorem epsum 
+        openModal(modal)
+    })
+})
+
+//Below is the  code to add Event listener for overlay
+overlay.addEventListener('click', () => {
+    const modals = document.querySelectorAll('.modal.active')
+    modals.forEach(modal => {
+        closeModal(odal)//calling the function named closeModal
+        // in order to make the command close every modal that
+        //has been opened.
+    })
+
+})
+closeModalButtons.forEach(button => {
+    button.addEventListener('click', () =>{
+        const modal = button.closest('.modal')
+ // We want to get the closest PARENT element with the class .modal
+ // so we use closest('.modal) since the modal is inside the
+ //  close button .
+ //Above (22) line of code ,that is const modal = button.closest('.modal')
+// will access the (24) line in index.HTML file ,that is
+//<button data-close-button class="close-button">&times;</button>
+//   The command then searches for the closest PARENT line of code that has
+//   the id as '.modal'. It checks the closest PARENT line of code 
+// ,ie, line (22)in index.HTML file   that is
+//  <div class="modal-header"> and rejects that line as its class is NOT 'modal'
+//  then the command checks the next closest PARENT line(21) in index.HTML ,that is
+//   <div class="modal" id="modal"> and returns that line to the script.js
+//   line (22)  const modal = button.closest('.modal')
+//close up the entity it points to
+// that is the pop up box with the id=modal
+
+        closeModal(modal)
+    })
+})
+
+
+
+function openModal(modal) {
+    if (modal == null) return
+    modal.classList.add('active')
+    overlay.classList.add('active')
+}
+
+function closeModal(modal) {
+    if (modal == null) return
+    modal.classList.remove('active')
+    overlay.classList.remove('active')
+}
+
