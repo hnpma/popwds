@@ -3,7 +3,9 @@ popwdsstylesDOTcss.txt
 C:\Users\User\Documents\popwds
 12:11 PM 7/23/2024
 
-*,*::after, *::before {
+*,*::after, *::before {/*The ::before selector inserts something 
+                 before the content of each selected element(s) that is 
+                * in line(1)*/   
    box-sizing: border-box;
 }
 
@@ -15,7 +17,9 @@ C:\Users\User\Documents\popwds
    transition: 200ms ease-in-out;
    border: 1px solid black;
    border-radius: 10px;
-   z-index:10;
+   z-index:10;/*high z index makes our modal draw above 
+                 everything else on the page */
+
    background-color:  rgb(200, 130, 200);
    width: 500px;
    max-width: 80%;
@@ -29,7 +33,8 @@ C:\Users\User\Documents\popwds
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px black;
+    border-bottom: 1px black;/*The header in the pop up box
+    has its own border at the bottom of the header part*/
 }
 
 .modal-header .title {
@@ -52,22 +57,109 @@ C:\Users\User\Documents\popwds
 
 #overlay {
     position: fixed;
-    opacity: 0;
+    opacity: 0;/* opacity should be 0, so that pop up box
+                    would NOT be displayed by default */
     transition: 200ms ease-in-out;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background-color: rgba(0,0,0, .5);
-    pointer-events: none;
+    pointer-events: none;/* lets user click on button 'Open Modal'
+                    when overlay is NOT active and overlay
+                    would not capture our CLICK events*/
 }
 
 #overlay.active {
     opacity: 1;
-    pointer-events: all;
+    pointer-events: all;/*so we could toggle & untoggle */
 }
 
+==+++++++++=DETAILS +++===============
+*,*::after, *::before {/* *Double colons ( :: ) are used for 
+            pseudo-elements. This distinguishes pseudo-elements
+             from pseudo-classes that use single colon ( : ) in
+              their notation. You can use only one pseudo-element
+               in a selector.
+               The ::before selector inserts something before
+                the content of each selected element(s) that is 
+                * in line(1)
+                Use the ::after selector to insert something 
+                after the content.*/
+   box-sizing: border-box;
+}
 
+.modal {
+    position: fixed;/*As the user moves the cursor,modal follows them*/
+    border: 2px solid rgb(39, 116, 3);/*gives box a border*/
+    top: 50%;/*Moves top left corner of box half way down the page*/
+    left: 25%;moves top left corner of box quarter length from left of user
+    border-radius: 10px; /*to curve the edges of box*/
+    background-color: rgb(208, 191, 245);
+    width: 500px;/*extends the box width to 500 pixels wide */
+    /* max-width: 10%; Makes max box width 10%of width(500px) that is 50px and
+                         the rest of the text in the box is
+                        displayed out of the box ...Ooops !  */
+    max-width: 80%;
+    transform: translation(-50%, -50%) scale(0);  
+    /* transform: translation(-35%, -25%) scale(0); */
+    /*scale(0)means we are hiding the box*/
+    /* translation moves pop up box 35% in X-direction and 25% in the Y-direction
+    with respect to the size of the container box NOT the page
+     It does not just move the top left corner of the pop up box*/
+   
+    transition: 200ms ease-in-out;/* when the box pops up, it gradually eases in
+                                    as it appears and when the box is closed, the box
+                                    gradually disappears.*/
+    z-index:10;/*high z index makes our modal draw above 
+                everything else on the page */
+ }
+
+
+ .modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid rgb(44, 13, 129);/*The header in the pop up box
+    has its own border at the bottom of the header part*/
+ }
+
+.modal-header .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+} 
+
+.modal-body {
+    padding: 10px 15px;
+}  
+
+#overlay {
+    position: fixed;
+    /* opacity: 0; */
+      /* opacity should be 0, so that pop up box
+        would NOT be displayed by default 
+        Coment the line out while you are still 
+        on coding the pop up box as you will need 
+        to see the box as you alter / add code.*/
+    top: 0;
+    left : 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+    pointer-events: none;/* lets user click on button 'Open Modal'
+                    when overlay is NOT active*/
+}
+==++ END OF details +++=====
 
 
 

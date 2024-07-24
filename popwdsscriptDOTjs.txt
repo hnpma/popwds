@@ -3,22 +3,94 @@ popwdsscriptDOTjs.txt
 C:\Users\User\Documents\popwds
 12:10 PM 7/23/2024
 
-const openModalButtons = document.querySelectorAll('[data-modal-target]')
+
+==+++7:32 PM 7/23/2024 +++===
+
+===+++ end 7:32 PM 7/23/2024 +++===
+
+
+
+
+const openModalButtons = querySelectorAll('[data-modal-target]')
+// We used the code All because we are writing code as 
+// if there ae various ways to open different modals
+//we used data-modal-target becasue it is the selector
+// for the line of code in HTML file that refers to the
+// modal popup box line(15)
+//IMP: THis const will be used for openModalButtons class
+
+
 const closeModalButtons = document.querySelectorAll('[data-modal-close-button]')
 // The above line points to the attribute we used in the HTML File
-// for the button with class="close-button" line 24
-const overlay = document.getElementById('overlay')
+// for the button with class="close-button" line 19
 
-openModalButtons.forEach(button => {
+const overlay = document.getElementById('overlay')
+//THe above line helps javascript select the overlay element
+// from the HTML file line () so that we could show it when
+//we need to show the overlay
+
+//BELOW ,WE ARE HOOKING UP THE EVENT LISTENERS
+//when a user clicks a button, the event listeners, listener
+//and help the code respond to user's click by doing an event
+// like opening a popup box OR closing a popup box
+
+openModalButtons.forEach(button => {//loop over code for each button
     button.addEventListener('click', () => {
+//what happens when the user clicks button named 
+//Open Modal is coded BELOW:
         const modal = document.querySelector(button.dataset.modalTarget)
- // The above line is going to get the line from HTML with the code
- // <button data-modal-target="#modal">Open Modal</button> line (15)
- //in index.HTML file
- //which points to the modal having the text of Lorem epsum 
-        openModal(modal)
+ // WHEN THE USER CLICKS,the Open Modal button,the above
+ //  line(41) will get the modal from HTML line with the code
+ // <button data-modal-target="#modal">Open Modal</button>
+ // line (15) in index.HTML file because in this .js file,
+ //the line(14) declares that the constant named 
+ //'openModalButtons is a query selector for the line in HTML
+ //file that has the javascript selector data-modal-target
+ //which points to the modal having the text of Lorem epsum
+ //The code in the line(14) alllows the code in the above(41)
+ //line to access ALL THE ATTRIBUTES of 'data-modal-target'
+ // ie., #modal as
+ //if they are the ATTRIBUTES of tis javascript file.
+ //Now modal can be passed as an argument to the function named
+ //openModal in this file on line(81)
     })
 })
+ closeModalButtons.forEach(button => {
+    button.addEventListener('click', () =>{
+        const modal = button.closest('.modal')
+ // We want to get the closest PARENT element with the class .modal
+ // so we use closest('.modal) since the modal is inside the
+ //  close button .
+ //Above (59) line of code ,that is const modal = button.closest('.modal')
+// will access the (19) line in index.HTML file ,that is
+//<button data-close-button class="close-button">&times;</button>
+// The command then searches for closest PARENT line of code that has
+// the id as '.modal'. It checks the closest PARENT line of code 
+// ,ie, line (17)in index.HTML file   that is
+//  <div class="modal-header"> and rejects that line as its class is NOT 'modal'
+//  then the command checks the next closest PARENT line(16) in index.HTML ,that is
+//   <div class="modal active" id="modal"> and returns that line to the script.js
+//   line (59) const modal = button.closest('.modal')
+//close up the entity it points to
+// that is the pop up box with the id=modal
+
+        closeModal(modal)
+    })
+})
+
+
+function openModal(modal) {
+    if (modal == null) return
+    modal.classList.add('active')//add a class named active
+    overlay,cassList.add('active')//to open overlay
+}
+
+function closeModal(modal) {
+    if (modal == null) return
+    modal.classList.remove('active')//remove a class named active
+    overlay.classList.remove('active')
+        }
+
 
 //Below is the  code to add Event listener for overlay
 overlay.addEventListener('click', () => {
@@ -30,40 +102,31 @@ overlay.addEventListener('click', () => {
     })
 
 })
-closeModalButtons.forEach(button => {
-    button.addEventListener('click', () =>{
-        const modal = button.closest('.modal')
- // We want to get the closest PARENT element with the class .modal
- // so we use closest('.modal) since the modal is inside the
- //  close button .
- //Above (22) line of code ,that is const modal = button.closest('.modal')
-// will access the (24) line in index.HTML file ,that is
-//<button data-close-button class="close-button">&times;</button>
-//   The command then searches for the closest PARENT line of code that has
-//   the id as '.modal'. It checks the closest PARENT line of code 
-// ,ie, line (22)in index.HTML file   that is
-//  <div class="modal-header"> and rejects that line as its class is NOT 'modal'
-//  then the command checks the next closest PARENT line(21) in index.HTML ,that is
-//   <div class="modal" id="modal"> and returns that line to the script.js
-//   line (22)  const modal = button.closest('.modal')
-//close up the entity it points to
-// that is the pop up box with the id=modal
 
+//BELOW is the code for closing the modal,anytime  the user
+//clicks on the overlay (ie., the part of the page that
+//does NOT have the pop up box modal)
+overlay.addEventListener('click',() => {
+     const modals = document.querySelectorAll('.modal.active')
+//the above line (110) has the code to help javascript find
+//every single modal that is open.
+    modals.forEach(modal => {//for each one of the open
+      // modals ,al we have to do is close the modal
         closeModal(modal)
     })
 })
 
 
 
-function openModal(modal) {
-    if (modal == null) return
-    modal.classList.add('active')
-    overlay.classList.add('active')
-}
 
-function closeModal(modal) {
-    if (modal == null) return
-    modal.classList.remove('active')
-    overlay.classList.remove('active')
-}
+
+
+
+
+
+
+
+
+
+
 

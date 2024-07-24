@@ -1,3 +1,59 @@
+
+
+
+==++ 6:49 PM 7/23/2024 +++====
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+    intial-scale=1.0"
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Modal</title>
+    <link href="styles.css" rel="stylesheet"
+    <script defer src="script.js"></script>
+
+
+</head>
+<body>
+    <!-- <button>Open Modal</button>-->
+        <!-- The above line needs a selector that points to
+           the modal and could be used by javascript.so
+            we add the code data-modal-target = "#modal"
+            becasue line(30) has an id of modal and its div
+            that builds the modal pop up box -->
+        <button data-modal-target="#modal">Open Modal</button>
+   <!-- <div class="modal" id="modal"> -->
+    <!-- To make the pop up box to be displayed when the button 
+        named 'Open Modal' is clicked, we make the above class
+        named modal TO BE active by coding class="modal active"-->
+        
+        <div class="modal active" id="modal">
+        <div class="modal-header">
+           <div class="title">Example     Modal</div>
+           <button data-close-button class="close-button">&times;</button>
+        <!-- data-close-button refers to Javascript class and
+              close-button refers to the css class-->
+        </div>
+        <div class="modal-body">
+              Lorem ipsum dolor sit amet, consectetur<br>
+               adipisicing&nbspelit. <br>
+               Ratione voluptas repellendus <br>
+               facilis omnis &nbsp
+              .&nbsp       &nbsp<br><br><br>
+                Iusto, sequi! Incidunt autem ! 
+        </div>
+    </div>
+<!-- <div class="active" id="overlay"></div> we do NOT want this
+                  overlay to show up by default so we remove
+                the class = "active" code-->
+      <div id="overlay"></div>
+</body>
+</html>
+
+===++ end of 6:49 PM 7/23/2024 +++===
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
