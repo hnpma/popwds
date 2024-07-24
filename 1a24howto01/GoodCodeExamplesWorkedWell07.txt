@@ -4,6 +4,7 @@ C:\Users\User\Documents\popwds\1a24howto01
 
 
 ==+GOOD CODE++ 2:12 PM 7/24/2024 GOOD CODE worked ++====
+GOAL  use addEventListener to add the function youRang() as the event handler for the Ring Bell button.
 index.html 2:13 PM 7/24/2024
 <!DOCTYPE html>
 <html lang="en">
