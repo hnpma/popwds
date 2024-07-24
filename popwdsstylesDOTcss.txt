@@ -3,6 +3,74 @@ popwdsstylesDOTcss.txt
 C:\Users\User\Documents\popwds
 12:11 PM 7/23/2024
 
+
+==++++7/24/24 WORKED +++=====
+*,*::after, *::before {            
+   box-sizing: border-box;
+}
+
+.modal {
+    position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%) scale(0);    /* scale(0) means we are hiding */
+   transition: 200ms ease-in-out;
+   border: 1px solid black;
+   border-radius: 10px;
+   z-index:10;/*high z index makes our modal draw above everything else on the page */
+   background-color:  rgb(200, 130, 200);
+   width: 500px;
+   max-width: 80%;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+ .modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid rgb(44, 13, 129);
+ }
+
+.modal-header .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+} 
+
+.modal-body {
+    padding: 10px 15px;
+}  
+
+#overlay {
+    position: fixed;
+    opacity: 0; 
+    transition: 200ms ease-in-out;
+    top: 0;
+    left : 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+    pointer-events: none;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+==+++ end of 7/24/24 WORKED +++====
 *,*::after, *::before {/*The ::before selector inserts something 
                  before the content of each selected element(s) that is 
                 * in line(1)*/   

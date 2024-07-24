@@ -1,0 +1,46 @@
+JavascriptHints32
+C:\Users\User\Documents\popwds\1a24howto01
+7:36 AM 7/24/2024
+
+
+Each browser has its own engine for running JavaScript. JavaScript that 
+is run in the browser is called 'client-side' JavaScript. Firefox runs
+JavaScript on its browser using an engine called Spider Monkey to
+run the client-side JavaScript. Each browser may handle HTML, CSS or
+JavaScript differently because each browser uses its own engine.
+A good resource to check browser usability of any JavaScript,HTML or
+CSS is the website named 'Can I use'.
+
+The <script>  element’s purpose is to include JavaScript into the web page.The <script>  tag can contain JavaScript code inside of it (inline JavaScript) or reference an external JavaScript file.
+    <script>
+        // JavaScript code goes here!
+        console.log("Hello from inside the web page!");
+    </script>
+8:48 AM 7/24/2024
+EXTERNAL JavaScript file named myjs.js is used as the external JavaScript file for the below HTML file
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>External JavaScript Example</title>
+    <script src = "myjs.js"></script>
+</head>
+<body>
+    <!-- content -->
+</body>
+</html>
+
+ he JavaScript file, named myjs.js might look something like this:
+
+console.log("Hello from web page using external js file"
+
+EVENTS
+Event-driven is a programming pattern where the flow of the program is determined by a series of events. JavaScript uses events to handle user interaction and make web pages dynamic. JavaScript also uses events to know when the state of the web page components change.
+
+9:24 AM 7/24/2024
+
+jQuery is a JavaScript library designed to simplify working with the DOM. jQuery’s popularity has declined as the DOM itself has gained features and improved usablity.
+
+
+

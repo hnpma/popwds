@@ -1,0 +1,77 @@
+GoodCodeExamplesWorkedWell07
+C:\Users\User\Documents\popwds\1a24howto01
+2:15 PM 7/24/2024
+
+
+==+GOOD CODE++ 2:12 PM 7/24/2024 GOOD CODE worked ++====
+index.html 2:13 PM 7/24/2024
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width,initial-scale=1.0"
+    <metahttp-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Button click handler</title>
+    <link href="styles01.css" rel="stylesheet">
+   
+</head>
+<body>
+    <h1>demo header</h1>
+    <p id="main-text" class="orange" >
+       This is a bunch of really truly valuable text...
+    </p>
+    <button id="ring-button">Ring Bell</button>
+    <script src="script.js"></script>
+</body>
+</html>
+
+///////////////////////////////////////
+script.js
+function youRang() {
+    document.getElementById("main-text").innerHTML += "you rang...";
+    console.log("you rang...");
+}
+// Obtain a reference to the button element
+const button = document.getElementById("ring-button");
+// Set named function youRang as the click event handler
+button.addEventListener("click", youRang);
+
+
+///////////////////////////////////////
+styles01.css
+
+h1 {
+    background-color: rgb(234, 221, 224); 
+    /* color: rgb(34, 13, 23); */
+    color:green;
+    text-align: center;
+}
+
+p {
+    font-weight: bold;
+    padding: 10px 45px;
+}
+
+button {
+    padding: 0px 25px;
+}
+///////////////////////////
+readme1aaJS2024
+C:\Users\User\Documents\1aaJS2024
+
+
+
+9:50 AM 7/24/2024//JS2024practice01ab.js
+//C:\Users\User\Documents\JS2024practice08
+// 8:53 AM 2/8/2024
+GitHub hnpma h2023sep15@outlook.com
+Code practice from Youtube sites below:
+
+
+
+
+
+==+GOOD CODE++ end of 2:12 PM 7/24/2024 GOOD CODE worked ++====
+
+
+
